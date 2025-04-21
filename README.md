@@ -57,4 +57,4 @@ xmlParser.addCallBack(pathTofollow,[](const xmlParser::xmlNode& node){
         }
     });
 ```
-This callback listens for an '<amount>' tag under an '<order>' tag and checks if its value exceeds 100. If so, it prints the id attribute of the parent order tag.
+This callback listens for an '/<amount/>' tag under an '/<order/>' tag and checks if its value exceeds 100. If so, it prints the id attribute of the parent order tag.
