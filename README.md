@@ -41,10 +41,10 @@ git clone https://github.com/yourusername/xmlparse.git
 cd xmlparse
 
 
-##Usage
+## Usage
 The XML parser can be used to parse any XML file. You can configure the behavior using the callback system to act upon specific tags and conditions.
 
-#Example:
+# Example:
 
 ```
 xmlParser.addCallBack([](std::string path, const xmlParser::xmlNode& node) {
