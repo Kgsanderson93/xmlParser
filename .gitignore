@@ -1,0 +1,20 @@
+# .gitignore
+
+# Ignore build/ directory
+/build/
+
+# Ignore object files
+*.o
+
+# Ignore binary files
+*.out
+
+# Ignore IDE/editor-specific files
+*.vscode
+*.idea
+
+# Ignore MacOS system files
+.DS_Store
+
+# Ignore temporary files
+*.swp
