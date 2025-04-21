@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a C++ XML parser designed to parse XML files into a tree structure. It supports parsing of tags, attributes, and text nodes, and includes features for error handling, debugging output, and callback functionality based on tag paths and conditions. The project also includes an example of a callback system that can trigger specific actions when certain conditions are met, such as when an `order/amount` tag exceeds a specified value.
+This project is a C++ XML parser designed to parse XML files into a tree structure. It supports parsing of tags, attributes, and text nodes, and includes features for error handling, debugging output, and callback functionality based on tag paths and conditions. 
 
 ## Features
 
