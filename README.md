@@ -47,13 +47,14 @@ The XML parser can be used to parse any XML file. You can configure the behavior
 # Example:
 
 ```
-xmlParser.addCallBack([](std::string path, const xmlParser::xmlNode& node) {
-    if (path == "/order/amount" && xmlUtils::parseIfInteger(node.text) > 100) {
-        auto it = node.parent->attributes.find("id");
-        if (it != node.parent->attributes.end()) {
-            std::cout << "Order " << it->first << ":" << it->second << " has amount " << node.text << " which is greater than 100.\n";
+std::string pathTofollow = "*/order/amount";
+xmlParser.addCallBack(pathTofollow,[](const xmlParser::xmlNode& node){
+  if(xmlUtils::pathEndsIn(node.path, "order/amount") && xmlUtils::parseIfInteger(node.text)>100){
+    auto it = node.parent->attributes.find("id");
+    if(it != node.parent->attributes.end()){
+      std::cout<< "Order "<<it->first<<":" << it->second << " has amount "<<node.text<<" which is greater than 100.\n";
+            }
         }
-    }
-});
+    });
 ```
-This callback listens for an <amount> tag under an <order> tag and checks if its value exceeds 100. If so, it prints the id attribute of the parent order tag.
+This callback listens for an '<amount>' tag under an '<order>' tag and checks if its value exceeds 100. If so, it prints the id attribute of the parent order tag.
