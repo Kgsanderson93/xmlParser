@@ -58,3 +58,14 @@ xmlParser.addCallBack(pathTofollow,[](const xmlParser::xmlNode& node){
     });
 ```
 This callback listens for an "amount" tag under an "order' tag and checks if its value exceeds 100. If so, it prints the id attribute of the parent order tag.
+
+
+
+
+## To-Do:
+  - move reading in the file from main to either util or xml parser. This will hopefully encapsulate all of the xml logics into a neat package that can more easily be called to handle the specific call backs we want to handle. 
+  - additionally I am unsure currently if the user should have to have knowledge of how the parser builds its nodes in order to set up a callback. I'm not sure of a way around it other than to make a tutorial. 
+  - find more valid xml files and see what I've missed. This is currently only really tested on the xml file i recieved as part of the homework email. I would like to expand this to hopefully try and see if I'm missing any edge cases. 
+  - make a lot more tests. Try a lot more callbacks.
+  
+
