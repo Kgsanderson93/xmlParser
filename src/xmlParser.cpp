@@ -3,8 +3,11 @@
 #include <vector>
 #include "xmlUtils.h"
 
-namespace xmlParser
+namespace Xml_Parser
 {
+    const std::unique_ptr<xmlNode>& xmlParser::getRoot() const {
+        return this->root;
+    }
     /**
      * This is mostly used for debugging. If this is on the structural parts of the xml file will be printed during parsing.
      */
@@ -31,8 +34,8 @@ namespace xmlParser
         size_t i = 0;
 
         root = std::make_unique<xmlNode>();
-        root->name = "root";
-        root->path = "/root";
+        root->name = "EmptyRoot";
+        root->path = "";
         current = root.get();
 
         while (i < xml.size())
@@ -89,7 +92,7 @@ namespace xmlParser
                                 }
                             }
                         }
-                        if (current->name != "root" && current->parent != nullptr)
+                        if (current->name != "EmptyRoot" && current->parent != nullptr)
                         {
 
                             current = current->parent; // move back to parent
@@ -113,8 +116,12 @@ namespace xmlParser
                     auto newNode = std::make_unique<xmlNode>();
                     newNode->name = name;
                     newNode->parent = current;
+                    if(current->name=="EmptyRoot"){
+                        newNode->path= name;
+                    }else{
                     newNode->path = current->path + "/" + name;
-                    newNode->startIndx = start;
+                    }
+                    newNode->startIdx = start;
                     current->children.push_back(std::move(newNode));
                     current = current->children.back().get();
 

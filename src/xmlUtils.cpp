@@ -1,14 +1,49 @@
 #include "xmlUtils.h"
 #include <vector>
 #include <climits> // For INT_MIN
+#include <iostream>
+
 
 namespace xmlUtils
 {
+    /**
+     * Normalizes input paths so that they never start or end in / and removes duplicate /
+     */
+    std::string normalizePath(const std::string& rawPath) {
+        std::string result;
+        bool lastWasSlash = false;
+    
+        for (char c : rawPath) {
+            if (c == '/') {
+                if (!lastWasSlash) {
+                    result += c;
+                    lastWasSlash = true;
+                }
+            } else {
+                result += c;
+                lastWasSlash = false;
+            }
+        }
+    
+        // Remove leading slash
+        if (!result.empty() && result[0] == '/') {
+            result = result.substr(1);
+        }
+    
+        // Remove trailing slash
+        if (!result.empty() && result.back() == '/') {
+            result.pop_back();
+        }
+    
+        return result;
+    }
+
     /**
      * This function takes in a pattern from the callback and the actual path of the current node and checks if either the path is exactly correct or if it contains a wildcard and the ending matches.
      */
     bool matchPath(const std::string &pattern, const std::string &path)
     { // currently this only handles front wildcards. If a case was found where end wildcards would be useful this would need to be updated... Haven't seen one yet.
+        std::cout<<"\n From match path: "<<path<<" pattern: "<< pattern<<"\n";
         if (pattern == path)
         {
             return true; // this was an exact match

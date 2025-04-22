@@ -5,6 +5,7 @@
 
 namespace xmlUtils{
     //Utility Functions
+    std::string normalizePath(const std::string& rawPath);
     bool matchPath(const std::string& pattern, const std::string& path);
     int parseIfInteger(const std::string& str);
     bool pathEndsIn(std::string nodePath, std::string endsin);
