@@ -18,7 +18,7 @@ namespace Xml_Parser
         std::string text;
         std::map<std::string, std::string> attributes;
         xmlNode* parent =nullptr;         
-        std::vector<std::unique_ptr<xmlNode>> children;
+        std::vector<std::shared_ptr<xmlNode>> children;
 
         
     // Default constructor
@@ -40,11 +40,11 @@ namespace Xml_Parser
         int parse(const std::string &xml);
         void addCallBack(std::string& path, NodeCallBack cb);
         void setCallBacks(std::map<std::string, NodeCallBack>);
-        const std::unique_ptr<xmlNode>& getRoot() const;
+        const std::shared_ptr<xmlNode>& getRoot() const;
         
 
     private:
-        std::unique_ptr<xmlNode> root;
+        std::shared_ptr<xmlNode> root;
         xmlNode *current = nullptr;
         std::map<std::string, NodeCallBack> callbacks;
     };

@@ -2,39 +2,77 @@
 #include <vector>
 #include <climits> // For INT_MIN
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 
 namespace xmlUtils
 {
+
+    /**
+     * Reads in a file to a string;
+     */
+    std::string readFileToString(std::string &filepath)
+    {
+        std::ifstream file(filepath);
+        if (!file.is_open())
+        {
+            std::cerr << "File failed to open\n";
+            return "";
+        }
+        std::stringstream buffer;
+        buffer << file.rdbuf();
+        return buffer.str();
+    }
+    /**
+     * Returns the last piece of a path.
+     */
+    std::string getLastPathComponent(const std::string &path)
+    {
+        size_t pos = path.rfind('/');
+        if (pos == std::string::npos)
+        {
+            return path; // No slash found, return the whole string
+        }
+        return path.substr(pos + 1);
+    }
     /**
      * Normalizes input paths so that they never start or end in / and removes duplicate /
      */
-    std::string normalizePath(const std::string& rawPath) {
+    std::string normalizePath(const std::string &rawPath)
+    {
         std::string result;
         bool lastWasSlash = false;
-    
-        for (char c : rawPath) {
-            if (c == '/') {
-                if (!lastWasSlash) {
+
+        for (char c : rawPath)
+        {
+            if (c == '/')
+            {
+                if (!lastWasSlash)
+                {
                     result += c;
                     lastWasSlash = true;
                 }
-            } else {
+            }
+            else
+            {
                 result += c;
                 lastWasSlash = false;
             }
         }
-    
+
         // Remove leading slash
-        if (!result.empty() && result[0] == '/') {
+        if (!result.empty() && result[0] == '/')
+        {
             result = result.substr(1);
         }
-    
+
         // Remove trailing slash
-        if (!result.empty() && result.back() == '/') {
+        if (!result.empty() && result.back() == '/')
+        {
             result.pop_back();
         }
-    
+
         return result;
     }
 
@@ -43,7 +81,7 @@ namespace xmlUtils
      */
     bool matchPath(const std::string &pattern, const std::string &path)
     { // currently this only handles front wildcards. If a case was found where end wildcards would be useful this would need to be updated... Haven't seen one yet.
-        std::cout<<"\n From match path: "<<path<<" pattern: "<< pattern<<"\n";
+        // std::cout<<"\n From match path: "<<path<<" pattern: "<< pattern<<"\n";
         if (pattern == path)
         {
             return true; // this was an exact match
@@ -58,7 +96,7 @@ namespace xmlUtils
                 return true;
             }
         }
-        
+
         return false;
     }
     /**

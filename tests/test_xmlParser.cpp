@@ -61,6 +61,7 @@ void test_unclosed_tag_error() {
     assertEqual(result, -1, "Detect unclosed inner tag")? testsPassed++ : testsFailed++;
 }
 
+
 int main() {
     std::cout<<"Starting xmlParser Tests\n";
     test_basic_structure();

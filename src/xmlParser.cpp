@@ -5,7 +5,7 @@
 
 namespace Xml_Parser
 {
-    const std::unique_ptr<xmlNode>& xmlParser::getRoot() const {
+    const std::shared_ptr<xmlNode>& xmlParser::getRoot() const {
         return this->root;
     }
     /**

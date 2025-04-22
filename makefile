@@ -16,10 +16,10 @@ TEST_DIR = tests
 BUILD_DIR = build
 
 # Source files
-MAIN_SRCS = $(SRC_DIR)/main.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp
-TEST_PARSER_SRCS = $(TEST_DIR)/test_parser.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp
-TEST_UTILS_SRCS = $(TEST_DIR)/test_xmlUtils.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp
-TEST_XMLPARSER_SRCS = $(TEST_DIR)/test_xmlParser.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp
+MAIN_SRCS = $(SRC_DIR)/main.cpp $(SRC_DIR)/xmlDemoRunner.cpp $(SRC_DIR)/userInterface.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp 
+TEST_PARSER_SRCS = $(TEST_DIR)/test_parser.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp $(SRC_DIR)/userInterface.cpp $(SRC_DIR)/xmlDemoRunner.cpp 
+TEST_UTILS_SRCS = $(TEST_DIR)/test_xmlUtils.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp $(SRC_DIR)/userInterface.cpp $(SRC_DIR)/xmlDemoRunner.cpp 
+TEST_XMLPARSER_SRCS = $(TEST_DIR)/test_xmlParser.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp $(SRC_DIR)/userInterface.cpp $(SRC_DIR)/xmlDemoRunner.cpp 
 
 # Object files
 MAIN_OBJS = $(MAIN_SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)

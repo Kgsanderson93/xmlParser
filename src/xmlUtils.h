@@ -5,6 +5,8 @@
 
 namespace xmlUtils{
     //Utility Functions
+    std::string readFileToString(std::string &filepath);
+    std::string getLastPathComponent(const std::string& path);
     std::string normalizePath(const std::string& rawPath);
     bool matchPath(const std::string& pattern, const std::string& path);
     int parseIfInteger(const std::string& str);
