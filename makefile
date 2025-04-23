@@ -2,13 +2,15 @@
 CXX = g++
 
 # Compiler flags
-CXXFLAGS = -Wall -g -std=c++17 -I./src
+CXXFLAGS = -Wall -g -std=c++17 -I./src -fprofile-arcs -ftest-coverage
+
 
 # Target executables
 MAIN_TARGET = xmlparser_main
 TEST_PARSER_TARGET = xmlparser_tests_parser
 TEST_UTILS_TARGET = xmlparser_tests_utils
 TEST_XMLPARSER_TARGET = xmlparser_tests_xmlParser
+TEST_XMLDEMORUNNER_TARGET = xmlparser_tests_xmlDemoRunner
 
 # Directories
 SRC_DIR = src
@@ -20,6 +22,7 @@ MAIN_SRCS = $(SRC_DIR)/main.cpp $(SRC_DIR)/xmlDemoRunner.cpp $(SRC_DIR)/userInte
 TEST_PARSER_SRCS = $(TEST_DIR)/test_parser.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp $(SRC_DIR)/userInterface.cpp $(SRC_DIR)/xmlDemoRunner.cpp 
 TEST_UTILS_SRCS = $(TEST_DIR)/test_xmlUtils.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp $(SRC_DIR)/userInterface.cpp $(SRC_DIR)/xmlDemoRunner.cpp 
 TEST_XMLPARSER_SRCS = $(TEST_DIR)/test_xmlParser.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp $(SRC_DIR)/userInterface.cpp $(SRC_DIR)/xmlDemoRunner.cpp 
+TEST_XMLDEMORUNNER_SRCS = $(TEST_DIR)/test_xmlDemoRunner.cpp $(SRC_DIR)/xmlParser.cpp $(SRC_DIR)/xmlUtils.cpp $(SRC_DIR)/userInterface.cpp $(SRC_DIR)/xmlDemoRunner.cpp 
 
 # Object files
 MAIN_OBJS = $(MAIN_SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
@@ -29,9 +32,11 @@ TEST_UTILS_OBJS = $(TEST_UTILS_SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 TEST_UTILS_OBJS := $(TEST_UTILS_OBJS:$(TEST_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 TEST_XMLPARSER_OBJS = $(TEST_XMLPARSER_SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 TEST_XMLPARSER_OBJS := $(TEST_XMLPARSER_OBJS:$(TEST_DIR)/%.cpp=$(BUILD_DIR)/%.o)
+TEST_XMLDEMORUNNER_OBJS = $(TEST_XMLDEMORUNNER_SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
+TEST_XMLDEMORUNNER_OBJS := $(TEST_XMLDEMORUNNER_OBJS:$(TEST_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 
 # Default rule: build all
-all: $(MAIN_TARGET) $(TEST_PARSER_TARGET) $(TEST_UTILS_TARGET) $(TEST_XMLPARSER_TARGET)
+all: $(MAIN_TARGET) $(TEST_PARSER_TARGET) $(TEST_UTILS_TARGET) $(TEST_XMLPARSER_TARGET) $(TEST_XMLDEMORUNNER_TARGET)
 
 # Build main app
 $(MAIN_TARGET): $(MAIN_OBJS)
@@ -46,6 +51,10 @@ $(TEST_UTILS_TARGET): $(TEST_UTILS_OBJS)
 
 $(TEST_XMLPARSER_TARGET): $(TEST_XMLPARSER_OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $(TEST_XMLPARSER_OBJS)
+
+$(TEST_XMLDEMORUNNER_TARGET): $(TEST_XMLDEMORUNNER_OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $(TEST_XMLDEMORUNNER_OBJS)
+
 
 # Ensure build/ exists
 $(BUILD_DIR):
@@ -63,13 +72,37 @@ main: $(MAIN_TARGET)
 	./$(MAIN_TARGET)
 
 # Run all tests
-test: $(TEST_PARSER_TARGET) $(TEST_UTILS_TARGET) $(TEST_XMLPARSER_TARGET)
+test: $(TEST_PARSER_TARGET) $(TEST_UTILS_TARGET) $(TEST_XMLPARSER_TARGET) $(TEST_XMLDEMORUNNER_TARGET)
 	./$(TEST_PARSER_TARGET)
 	./$(TEST_UTILS_TARGET)
 	./$(TEST_XMLPARSER_TARGET)
+	./$(TEST_XMLDEMORUNNER_TARGET)
 
 # Clean rule
 clean:
-	rm -rf $(BUILD_DIR) $(MAIN_TARGET) $(TEST_PARSER_TARGET) $(TEST_UTILS_TARGET) $(TEST_XMLPARSER_TARGET)
+	rm -rf $(BUILD_DIR) *.gcno *.gcda *.gcov coverage.info coverage-report \
+		$(MAIN_TARGET) $(TEST_PARSER_TARGET) $(TEST_UTILS_TARGET) \
+		$(TEST_XMLPARSER_TARGET) $(TEST_XMLDEMORUNNER_TARGET)
+
+coverage: test
+	gcov -o $(BUILD_DIR) $(SRC_DIR)/*.cpp $(TEST_DIR)/*.cpp
+
+coverage-html: clean all
+	# Run all tests
+	./$(TEST_PARSER_TARGET)
+	./$(TEST_UTILS_TARGET)
+	./$(TEST_XMLPARSER_TARGET)
+	./$(TEST_XMLDEMORUNNER_TARGET)
+
+	# Capture coverage data
+	lcov --capture --directory . --output-file coverage.info
+
+	# Filter out external/unwanted files (like system includes)
+	lcov --remove coverage.info '/usr/*' --output-file coverage.info
+
+	# Generate HTML report
+	genhtml coverage.info --output-directory coverage-report
+
+	@echo "HTML coverage report generated in ./coverage-report/index.html"
 
 .PHONY: all clean main test

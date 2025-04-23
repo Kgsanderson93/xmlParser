@@ -1,0 +1,293 @@
+Starting tag <?xml> 
+    Attribute: version = 1.0
+Starting tag <catalog> 
+Starting tag <book> 
+    Attribute: id = bk101
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Gambardella, Matthew
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: XML Developer's Guide
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Computer
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 44.95
+Closing tag :</price>
+Callback matched: book at path: ?xml/catalog/book/price with attributes: 
+- id = bk101
+With price = 44.95
+On condition price greater than 10
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2000-10-01
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: An in-depth look at creating applications 
+      with XML.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk102
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Ralls, Kim
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: Midnight Rain
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Fantasy
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 5.95
+Closing tag :</price>
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2000-12-16
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: A former architect battles corporate zombies, 
+      an evil sorceress, and her own childhood to become queen 
+      of the world.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk103
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Corets, Eva
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: Maeve Ascendant
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Fantasy
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 5.95
+Closing tag :</price>
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2000-11-17
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: After the collapse of a nanotechnology 
+      society in England, the young survivors lay the 
+      foundation for a new society.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk104
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Corets, Eva
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: Oberon's Legacy
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Fantasy
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 5.95
+Closing tag :</price>
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2001-03-10
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: In post-apocalypse England, the mysterious 
+      agent known only as Oberon helps to create a new life 
+      for the inhabitants of London. Sequel to Maeve 
+      Ascendant.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk105
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Corets, Eva
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: The Sundered Grail
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Fantasy
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 5.95
+Closing tag :</price>
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2001-09-10
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: The two daughters of Maeve, half-sisters, 
+      battle one another for control of England. Sequel to 
+      Oberon's Legacy.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk106
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Randall, Cynthia
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: Lover Birds
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Romance
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 4.95
+Closing tag :</price>
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2000-09-02
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: When Carla meets Paul at an ornithology 
+      conference, tempers fly as feathers get ruffled.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk107
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Thurman, Paula
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: Splish Splash
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Romance
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 4.95
+Closing tag :</price>
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2000-11-02
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: A deep sea diver finds true love twenty 
+      thousand leagues beneath the sea.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk108
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Knorr, Stefan
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: Creepy Crawlies
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Horror
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 4.95
+Closing tag :</price>
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2000-12-06
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: An anthology of horror stories about roaches,
+      centipedes, scorpions  and other insects.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk109
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Kress, Peter
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: Paradox Lost
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Science Fiction
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 6.95
+Closing tag :</price>
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2000-11-02
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: After an inadvertant trip through a Heisenberg
+      Uncertainty Device, James Salway discovers the problems 
+      of being quantum.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk110
+Starting tag <author> 
+Text at /?xml/catalog/book/author: O'Brien, Tim
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: Microsoft .NET: The Programming Bible
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Computer
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 36.95
+Closing tag :</price>
+Callback matched: book at path: ?xml/catalog/book/price with attributes: 
+- id = bk110
+With price = 36.95
+On condition price greater than 10
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2000-12-09
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: Microsoft's .NET initiative is explored in 
+      detail in this deep programmer's reference.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk111
+Starting tag <author> 
+Text at /?xml/catalog/book/author: O'Brien, Tim
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: MSXML3: A Comprehensive Guide
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Computer
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 36.95
+Closing tag :</price>
+Callback matched: book at path: ?xml/catalog/book/price with attributes: 
+- id = bk111
+With price = 36.95
+On condition price greater than 10
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2000-12-01
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: The Microsoft MSXML3 parser is covered in 
+      detail, with attention to XML DOM interfaces, XSLT processing, 
+      SAX and more.
+Closing tag :</description>
+Closing tag :</book>
+Starting tag <book> 
+    Attribute: id = bk112
+Starting tag <author> 
+Text at /?xml/catalog/book/author: Galos, Mike
+Closing tag :</author>
+Starting tag <title> 
+Text at /?xml/catalog/book/title: Visual Studio 7: A Comprehensive Guide
+Closing tag :</title>
+Starting tag <genre> 
+Text at /?xml/catalog/book/genre: Computer
+Closing tag :</genre>
+Starting tag <price> 
+Text at /?xml/catalog/book/price: 49.95
+Closing tag :</price>
+Callback matched: book at path: ?xml/catalog/book/price with attributes: 
+- id = bk112
+With price = 49.95
+On condition price greater than 10
+Starting tag <publish_date> 
+Text at /?xml/catalog/book/publish_date: 2001-04-16
+Closing tag :</publish_date>
+Starting tag <description> 
+Text at /?xml/catalog/book/description: Microsoft Visual Studio 7 is explored in depth,
+      looking at how Visual Basic, Visual C++, C#, and ASP+ are 
+      integrated into a comprehensive development 
+      environment.
+Closing tag :</description>
+Closing tag :</book>
+Closing tag :</catalog>

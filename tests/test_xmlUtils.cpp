@@ -29,10 +29,13 @@ void testMatchPath()
 
 void testParseIfInteger()
 {
-    assertEqual(42, parseIfInteger("42"), "Valid integer") ? testsPassed++ : testsFailed++;
-    assertEqual(INT_MIN, parseIfInteger("notAnInt"), "Invalid string") ? testsPassed++ : testsFailed++;
-    assertEqual(INT_MIN, parseIfInteger("42abc"), "Mixed content") ? testsPassed++ : testsFailed++;
-    assertEqual(INT_MIN, parseIfInteger(""), "Empty string") ? testsPassed++ : testsFailed++;
+    assertEqual(42, parseIfDouble("42"), "Valid double") ? testsPassed++ : testsFailed++;
+    assertEqual(42.00, parseIfDouble("42.00"), "Valid integer") ? testsPassed++ : testsFailed++;
+    assertEqual(.42, parseIfDouble(".42"), "Valid integer") ? testsPassed++ : testsFailed++;
+    assertEqual(INT_MIN, parseIfDouble("notAnInt"), "Invalid string") ? testsPassed++ : testsFailed++;
+    assertEqual(INT_MIN, parseIfDouble("42abc"), "Mixed content") ? testsPassed++ : testsFailed++;
+    assertEqual(INT_MIN, parseIfDouble(""), "Empty string") ? testsPassed++ : testsFailed++;
+
 }
 
 void testPathEndsIn()

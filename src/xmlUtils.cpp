@@ -102,14 +102,14 @@ namespace xmlUtils
     /**
      * This function attempts to parse a string to an int and returns the value if the entire string was successfully converted and returns int_min if not.
      */
-    int parseIfInteger(const std::string &str)
+    double parseIfDouble(const std::string &str)
     {
         if (str.empty())
             return INT_MIN;
         size_t idx = 0;
         try
         {
-            int val = std::stoi(str, &idx); // idx tells us how many chars were converted
+            double val = std::stod(str, &idx); // idx tells us how many chars were converted
             /// so theoretically if they all converted it really was an int (we're currently ignoring numbers too large to be an int.)
             if (idx == str.size())
             {

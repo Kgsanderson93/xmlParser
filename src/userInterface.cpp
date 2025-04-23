@@ -103,7 +103,7 @@ int UserInterface::promptCallbackMode()
               << "- 1 print\n- 2 vector (shared)\n- 3 vector (separate for each)\n";
     std::string command;
     std::getline(std::cin, command);
-    int mode = xmlUtils::parseIfInteger(command);
+    int mode = xmlUtils::parseIfDouble(command);
     if (mode >= 1 && mode <= 3){
         return mode;
     }else{
@@ -147,12 +147,12 @@ std::pair<bool, int> UserInterface::promptTrigger(const std::string &nodeName)
     int triggerVal = INT_MIN;
     while (triggerVal == INT_MIN)
     {
-        std::cout << "Enter an integer trigger value: \n";
+        std::cout << "Enter a valid double trigger value: \n";
         std::getline(std::cin, input);
-        triggerVal = xmlUtils::parseIfInteger(xmlUtils::trim(input));
+        triggerVal = xmlUtils::parseIfDouble(xmlUtils::trim(input));
         if (triggerVal == INT_MIN)
         {
-            std::cerr << "Invalid input. Please enter an integer.\n";
+            std::cerr << "Invalid input. Please enter an double.\n";
         }
     }
     return {greater, triggerVal};

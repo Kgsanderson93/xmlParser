@@ -18,12 +18,14 @@ int main(int argc, char *argv[])
     }
 
     std::string command;
+    if(!testMode){
     std::cout << "Select the demo to run\n- 1 default order greater than 100 demo\n- 2 custom demo\n";
     getline(std::cin, command);
+    }
     xmlDemoRunner runner;
     runner.testMode = testMode;
     runner.debug=debug;
-    if (command == "1")
+    if (command == "1" || testMode)
     {
         runner.runDefault();
         return 0;

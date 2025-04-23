@@ -11,6 +11,7 @@ int testsFailed = 0;
 
 void test_basic_structure() {
     xmlParser parser;
+    parser.printMode=false;
     std::string xml = "<root><child>hello</child></root>";
     int result = parser.parse(xml);
     assertEqual(result, 0, "Basic XML structure parses")? testsPassed++ : testsFailed++;
@@ -20,6 +21,7 @@ void test_basic_structure() {
 
 void test_attribute_parsing() {
     xmlParser parser;
+    parser.printMode=false;
     std::string xml = "<root attr=\"value\"></root>";
     parser.parse(xml);
     auto root = parser.getRoot()->children[0].get();
@@ -28,6 +30,7 @@ void test_attribute_parsing() {
 
 void test_comment_ignoring() {
     xmlParser parser;
+    parser.printMode=false;
     std::string xml = "<root><!-- ignored --><child>hi</child></root>";
     parser.parse(xml);
     assertEqual(parser.getRoot()->children[0]->children[0]->name, "child", "Ignore XML comment")? testsPassed++ : testsFailed++;
@@ -35,6 +38,7 @@ void test_comment_ignoring() {
 
 void test_callback_triggering() {
     xmlParser parser;
+    parser.printMode=false;
     bool called = false;
     std::string path = "root/child";
     parser.addCallBack(path, [&](const xmlNode& node) {
@@ -49,6 +53,7 @@ void test_callback_triggering() {
 
 void test_mismatched_tag_error() {
     xmlParser parser;
+    parser.printMode=false;
     std::string xml = "<root><child></child2></root>";
     int result = parser.parse(xml);
     assertEqual(result, -1, "Detect mismatched closing tag")? testsPassed++ : testsFailed++;
@@ -56,6 +61,7 @@ void test_mismatched_tag_error() {
 
 void test_unclosed_tag_error() {
     xmlParser parser;
+    parser.printMode=false;
     std::string xml = "<root><child></root>";
     int result = parser.parse(xml);
     assertEqual(result, -1, "Detect unclosed inner tag")? testsPassed++ : testsFailed++;

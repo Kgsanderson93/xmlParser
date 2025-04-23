@@ -1,0 +1,10 @@
+<catalog>
+<!-- This is a sample XML file with escaped characters -->
+    <book id="bk101">
+        <author>John O&apos;Connor</author>
+        <title>Understanding &amp; Using XML</title>
+        <genre>Computer &lt;Tech&gt;</genre>
+        <price>44</price>
+        <description>This &quot;beginner-friendly&quot; guide explains XML basics.</description>
+    </book>
+</catalog>

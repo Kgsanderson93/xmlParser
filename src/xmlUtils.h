@@ -9,7 +9,7 @@ namespace xmlUtils{
     std::string getLastPathComponent(const std::string& path);
     std::string normalizePath(const std::string& rawPath);
     bool matchPath(const std::string& pattern, const std::string& path);
-    int parseIfInteger(const std::string& str);
+    double parseIfDouble(const std::string& str);
     bool pathEndsIn(std::string nodePath, std::string endsin);
     bool isWhiteSpaceOnly(const std::string &str);
     std::string trim(const std::string &str);

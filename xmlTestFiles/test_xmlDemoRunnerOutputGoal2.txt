@@ -1,0 +1,4 @@
+Callback matched: order at path: root/order/amount with attributes: 
+- id = 222
+With amount = 2
+On condition amount less than 100

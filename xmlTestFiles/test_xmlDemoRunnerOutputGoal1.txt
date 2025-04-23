@@ -1,0 +1,8 @@
+Callback matched: order at path: root/order/amount with attributes: 
+- id = 1111
+With amount = 150
+On condition amount greater than 100
+Callback matched: order at path: root/order/amount with attributes: 
+- id = 333
+With amount = 2000
+On condition amount greater than 100

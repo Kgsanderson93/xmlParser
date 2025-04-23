@@ -1,0 +1,4 @@
+Callback matched: book at path: catalog/book/price with attributes: 
+- id = bk101
+With price = 44
+On condition price greater than 2
